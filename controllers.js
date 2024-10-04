@@ -100,12 +100,13 @@ res.send("succeed")
 
 
 getUsers : async (req,res)=>{
-try{
-    res.send("Worked")
-
-}catch(err){
-        console.log(err)
-}
+    try{
+        let get = await UserSchema.find()
+        get
+        res.send(get)
+    }catch(err){
+        res.send(`The Problem Is ${err}`)
+    }
 },
 
 
