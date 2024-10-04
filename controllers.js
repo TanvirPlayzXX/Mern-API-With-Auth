@@ -88,7 +88,7 @@ res.send("succeed")
             name: user.name,
             email: user.email
         }
-        const jwtToken = jwt.sign(tokenObject,process.env.secret,{expiresIn: "1h"})
+        const jwtToken = jwt.sign(tokenObject,process.env.SECRET,{expiresIn: "1h"})
         res.send({jwtToken,tokenObject})
 
 }catch(err){
